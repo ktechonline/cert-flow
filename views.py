@@ -1,9 +1,9 @@
 import json
 import base64
 from django.http import JsonResponse
-from .cert_functions import generate_client_cert, validate_client_cert
+from .functions import generate_client_cert, validate_client_cert
 
-def v2_cert_gen(request, unit_type, qty):
+def cert_gen(request, unit_type, qty):
 
     unit_uuid = "ABC123"
     unit_type = unit_type
@@ -21,5 +21,5 @@ def v2_cert_gen(request, unit_type, qty):
     })
 
 
-def v2_cert_val(request):
+def cert_val(request):
     return validate_client_cert(request)
